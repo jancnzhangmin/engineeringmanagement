@@ -1,0 +1,199 @@
+<div class="settings-panel">
+
+  <div class="mt-4 d-table w-100 px-5">
+    <div class="d-table-cell align-middle">
+      <h5 class="p-0">
+        应用布局
+      </h5>
+    </div>
+  </div>
+
+  <div class="list" id="fh">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'header-function-fixed'} %>
+    <span class="onoffswitch-title">固定页眉</span>
+    <span class="onoffswitch-title-desc">标题始终处于固定状态</span>
+  </div>
+  <div class="list" id="nff">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-function-fixed'} %>
+    <span class="onoffswitch-title">固定导航</span>
+    <span class="onoffswitch-title-desc">左面板固定</span>
+  </div>
+  <div class="list" id="nfm">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-function-minify'} %>
+    <span class="onoffswitch-title">缩小导航</span>
+    <span class="onoffswitch-title-desc">缩小导航获得更多操作空间</span>
+  </div>
+  <div class="list" id="nfh">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-function-hidden'} %>
+    <span class="onoffswitch-title">隐藏导航</span>
+    <span class="onoffswitch-title-desc">移动鼠标到边缘显示</span>
+  </div>
+  <div class="list" id="nft">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-function-top'} %>
+    <span class="onoffswitch-title">顶部导航</span>
+    <span class="onoffswitch-title-desc">将左窗格重新定位到顶部</span>
+  </div>
+  <div class="list" id="mmb">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-main-boxed'} %>
+    <span class="onoffswitch-title">容器布局</span>
+    <span class="onoffswitch-title-desc">将应用封装到容器中</span>
+  </div>
+  <div class="expanded">
+    <ul class="">
+      <li><div class="bg-fusion-50" data-action="toggle" data-class="mod-bg-1"></div></li>
+      <li><div class="bg-warning-200" data-action="toggle" data-class="mod-bg-2"></div></li>
+      <li><div class="bg-primary-200" data-action="toggle" data-class="mod-bg-3"></div></li>
+      <li><div class="bg-success-300" data-action="toggle" data-class="mod-bg-4"></div></li>
+    </ul>
+    <div class="list" id="mbgf">
+      <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-fixed-bg'} %>
+      <span class="onoffswitch-title">固定背景</span>
+    </div>
+  </div>
+
+  <div class="mt-4 d-table w-100 px-5">
+    <div class="d-table-cell align-middle">
+      <h5 class="p-0">
+        移动菜单
+      </h5>
+    </div>
+  </div>
+
+  <div class="list" id="nmp">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-mobile-push'} %>
+    <span class="onoffswitch-title">推送内容</span>
+    <span class="onoffswitch-title-desc">按菜单显示的内容</span>
+  </div>
+  <div class="list" id="nmno">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-mobile-no-overlay'} %>
+    <span class="onoffswitch-title">无覆盖</span>
+    <span class="onoffswitch-title-desc">删除菜单网格</span>
+  </div>
+  <div class="list" id="sldo">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'nav-mobile-slide-out'} %>
+    <span class="onoffswitch-title">Off-Canvas <sup>(beta)</sup></span>
+    <span class="onoffswitch-title-desc">Content overlaps menu</span>
+  </div>
+
+  <div class="mt-4 d-table w-100 px-5">
+    <div class="d-table-cell align-middle">
+      <h5 class="p-0">
+        视觉辅助
+      </h5>
+    </div>
+  </div>
+
+  <div class="list" id="mbf">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-bigger-font'} %>
+    <span class="onoffswitch-title">较大的内容字体</span>
+    <span class="onoffswitch-title-desc">内容字体更大 可读性更强</span>
+  </div>
+  <div class="list" id="mhc">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-high-contrast'} %>
+    <span class="onoffswitch-title">高对比度文本(WCAG 2 AA)</span>
+    <span class="onoffswitch-title-desc">4.5:1 文本对比度</span>
+  </div>
+  <div class="list" id="mcb">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-color-blind'} %>
+    <span class="onoffswitch-title">调性 <sup>(beta)</sup> </span>
+    <span class="onoffswitch-title-desc">色觉辨认障碍</span>
+  </div>
+  <div class="list" id="mpc">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-pace-custom'} %>
+    <span class="onoffswitch-title">预加载</span>
+    <span class="onoffswitch-title-desc">内容预加载</span>
+  </div>
+
+  <div class="mt-4 d-table w-100 px-5">
+    <div class="d-table-cell align-middle">
+      <h5 class="p-0">
+        布局调整
+      </h5>
+    </div>
+  </div>
+  <div class="list" id="mcbg">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-clean-page-bg'} %>
+    <span class="onoffswitch-title">页面背景透明</span>
+    <span class="onoffswitch-title-desc">留出更多空白</span>
+  </div>
+  <div class="list" id="mhni">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-hide-nav-icons'} %>
+    <span class="onoffswitch-title">隐藏导航图标</span>
+    <span class="onoffswitch-title-desc">导航图标不显示</span>
+  </div>
+  <div class="list" id="dan">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-disable-animation'} %>
+    <span class="onoffswitch-title">禁用CSS动画</span>
+    <span class="onoffswitch-title-desc">禁用基于css的动画</span>
+  </div>
+  <div class="list" id="mhic">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-hide-info-card'} %>
+    <span class="onoffswitch-title">隐藏信息卡</span>
+    <span class="onoffswitch-title-desc">隐藏左面板的信息卡</span>
+  </div>
+  <div class="list" id="mlph">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-lean-subheader'} %>
+    <span class="onoffswitch-title">简化副标题</span>
+    <span class="onoffswitch-title-desc">区分页眉</span>
+  </div>
+  <div class="list" id="mnl">
+    <%= link_to '', '#', onclick: 'return false;', class: 'btn btn-switch', data: {action: 'toggle', class: 'mod-nav-link'} %>
+    <span class="onoffswitch-title">层次导航</span>
+    <span class="onoffswitch-title-desc">导航链接的清晰分层</span>
+  </div>
+
+
+  <div class="mt-2 d-table w-100 pl-5 pr-3">
+    <div class="d-table-cell align-middle">
+      <h5 class="p-0">
+        主题颜色<small>(覆盖默认CSS)</small>
+      </h5>
+
+    </div>
+  </div>
+  <div class="expanded theme-colors pl-5 pr-3">
+    <ul class="m-0">
+      <li><%= link_to '', '#', id: 'myapp-0', data: {action: 'theme-update',  themesave: '', theme: '', toggle: 'tooltip', placement: 'top', 'original-title' => 'Wisteria (base css)'}, title: '紫藤(默认)' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-1', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-1.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Tapestry'}, title: '壁毯' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-2', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-2.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Atlantis'}, title: '亚特兰蒂斯' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-3', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-3.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Indigo'}, title: '靛蓝' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-4', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-4.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Dodger Blue'}, title: '道奇蓝' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-5', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-5.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Tradewind'}, title: '贸易风' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-6', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-6.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Cranberry'}, title: '蔓越莓' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-7', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-7.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Oslo Gray'}, title: '奥斯陆灰' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-8', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-8.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Chetwode Blue'}, title: '切特沃德蓝' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-9', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-9.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Apricot'}, title: '杏黄' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-10', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-10.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Blue Smoke'}, title: '烟蓝' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-11', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-11.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Green Smoke'}, title: '烟绿' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-12', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-12.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Wild Blue Yonder'}, title: '远方蓝' %></li>
+
+      <li><%= link_to '', '#', id: 'myapp-13', data: {action: 'theme-update', themesave: '', theme: stylesheet_path('smartadmin/themes/cust-theme-13.css'), toggle: 'tooltip', placement: 'top', 'original-title' => 'Emerald'}, title: '祖母绿' %></li>
+    </ul>
+  </div>
+
+
+  <hr class="mb-0 mt-4">
+  <div class="pl-5 pr-3 py-3 bg-faded">
+    <div class="row no-gutters">
+      <div class="col-6 pr-1">
+        <%= link_to '重置个性化设置', '#', class: 'btn btn-danger fw-500 btn-block', data: {action: 'app-reset'} %>
+      </div>
+      <div class="col-6 pl-1">
+        <%= link_to 'Factory Reset', '#', class: 'btn btn-danger fw-500 btn-block', data: {action: 'factory-reset'} %>
+      </div>
+    </div>
+  </div>
+
+</div>

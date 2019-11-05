@@ -1,0 +1,42 @@
+
+<%
+  content_for(:title, '任务状态')
+  content_for(:category_1, 'Tables')
+%>
+<% content_for :heading do %>
+  <i class='fal fa-th-list text-primary'></i>  任务状态
+<% end %>
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card mb-g">
+
+      <div class="card-body">
+        <div class="frame-wrap bg-faded mb-5">
+        <div class="frame-wrap p-0 border-0 m-0">
+          <table class="table m-0 table-bordered table-hover" id="table-example">
+            <thead>
+            <tr>
+              <th>状态</th>
+              <th>默认</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @questionstatus.each do |questionstatu| %>
+            <tr>
+              <td><%= questionstatu.statu %></td>
+              <td><%= questionstatu.isdefault %></td>
+              <td><button type="button" class="btn btn-primary waves-effect waves-themed">Primary</button></td>
+            </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= link_to '新增', new_questionstatus_path, class:'btn btn-primary mt-3 float-right' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

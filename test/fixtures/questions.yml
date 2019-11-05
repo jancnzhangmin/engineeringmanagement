@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  theme: MyString
+  require: MyText
+  begindate: 2019-10-26 18:15:06
+  enddate: 2019-10-26 18:15:06
+  progress: 1.5
+  up_id: 
+  questionstatu_id: 
+  questionpri_id: 
+  user_id: 
+  project_id: 
+
+two:
+  theme: MyString
+  require: MyText
+  begindate: 2019-10-26 18:15:06
+  enddate: 2019-10-26 18:15:06
+  progress: 1.5
+  up_id: 
+  questionstatu_id: 
+  questionpri_id: 
+  user_id: 
+  project_id: 

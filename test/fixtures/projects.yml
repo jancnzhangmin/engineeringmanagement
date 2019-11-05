@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  summary: MyString
+  begindate: 2019-10-26 18:05:05
+  enddate: 2019-10-26 18:05:05
+  examine: 1
+
+two:
+  name: MyString
+  summary: MyString
+  begindate: 2019-10-26 18:05:05
+  enddate: 2019-10-26 18:05:05
+  examine: 1
