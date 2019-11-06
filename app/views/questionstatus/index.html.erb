@@ -5,6 +5,7 @@
 %>
 <% content_for :heading do %>
   <i class='fal fa-th-list text-primary'></i>  任务状态
+  <%= stylesheet_link_tag 'smartadmin/fa-solid', media: 'screen, print' %>
 <% end %>
 
 
@@ -14,29 +15,39 @@
 
       <div class="card-body">
         <div class="frame-wrap bg-faded mb-5">
-        <div class="frame-wrap p-0 border-0 m-0">
-          <table class="table m-0 table-bordered table-hover" id="table-example">
-            <thead>
-            <tr>
-              <th>状态</th>
-              <th>默认</th>
-              <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <% @questionstatus.each do |questionstatu| %>
-            <tr>
-              <td><%= questionstatu.statu %></td>
-              <td><%= questionstatu.isdefault %></td>
-              <td><button type="button" class="btn btn-primary waves-effect waves-themed">Primary</button></td>
-            </tr>
+          <div class="frame-wrap p-0 border-0 m-0">
+            <table class="table m-0 table-bordered table-hover" id="table-example">
+              <thead>
+              <tr>
+                <th>状态</th>
+                <th>默认选择</th>
+                <th style="width: 150px;">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @questionstatus.each do |questionstatu| %>
+                <tr>
+                  <td><%= questionstatu.statu %></td>
+                  <td>
+                    <% if questionstatu.isdefault == 1 %>
+                    <i class="fas fa-check text-primary"></i>
+                      <% end %>
+                  </td>
+                  <td>
+                    <%= link_to '编辑', edit_questionstatus_path(questionstatu), class:'btn btn-sm btn-primary' %>
+                    <%= link_to '删除', questionstatus_path(questionstatu), method: :delete, class:'btn btn-sm btn-danger', data: { confirm: '确认删除?' } %>
+                  </td>
+                </tr>
               <% end %>
-            </tbody>
-          </table>
-          <%= link_to '新增', new_questionstatus_path, class:'btn btn-primary mt-3 float-right' %>
+              </tbody>
+            </table>
+            <div class="customer-pagination">
+            <%= paginate  @questionstatus %>
+            </div>
+            <%= link_to '新增', new_questionstatus_path, class:'btn btn-primary mt-3 float-right' %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

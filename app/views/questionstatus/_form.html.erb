@@ -6,12 +6,12 @@
       <div class="panel-container show">
 
         <div class="panel-content p-0">
-            <%= form_with(model: formdate, local: true,:html => {:class=>'needs-validation'}) do |form| %>
+          <%= form_with(scope: :questionstatu,method:questionstatu.id ? 'patch' : 'post', url:questionstatu.id ? questionstatus_path(questionstatu) : questionstatus_index_path, local: true,:html => {class:'needs-validation',novalidate:''}) do |f| %>
             <div class="panel-content">
               <div class="form-row form-group">
                 <div class="col-md-6 mb-3">
                   <label class="form-label" for="validationCustom03">任务状态 <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="validationCustom03" required>
+                  <%= f.text_field :statu,class:"form-control",required:'' %>
                   <div class="invalid-feedback">
                     任务状态不能为空
                   </div>
@@ -22,8 +22,10 @@
                 <div class="col-12">
 
                   <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="invalidCheck" >
-                    <label class="custom-control-label" for="invalidCheck">默认选择 </label>
+
+
+                    <%= f.check_box :isdefault,  class:'custom-control-input' %>
+                    <label class="custom-control-label" for="questionstatu_isdefault">默认选择 </label>
                     <div class="invalid-feedback">
 
                     </div>
@@ -41,10 +43,9 @@
 
               <div class="d-flex col-md-6 mb-3">
                 <button class="btn btn-primary ml-auto" type="submit">提交</button>
-                <%= form.submit %>
               </div>
             </div>
-              <% end %>
+          <% end %>
 
         </div>
       </div>

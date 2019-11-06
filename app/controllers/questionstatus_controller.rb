@@ -4,7 +4,7 @@ class QuestionstatusController < ApplicationController
   # GET /mytests
   # GET /mytests.json
   def index
-    @questionstatus = Questionstatu.all
+    @questionstatus = Questionstatu.all.page(params[:page]).per(3)
   end
 
   # GET /mytests/1
@@ -24,14 +24,16 @@ class QuestionstatusController < ApplicationController
   # POST /mytests
   # POST /mytests.json
   def create
-    debugger
     @questionstatu = Questionstatu.new(questionstatu_params)
-
     respond_to do |format|
       if @questionstatu.save
-        format.html { redirect_to @questionstatu, notice: 'Questionstatu was successfully created.' }
+        if questionstatu_params[:isdefault] == '1'
+          changedefault(@questionstatu.id)
+        end
+        format.html { redirect_to questionstatus_index_path, notice: 'Questionstatu was successfully created.' }
         format.json { render :show, status: :created, location: @questionstatu }
       else
+        debugger
         format.html { render :new }
         format.json { render json: @questionstatu.errors, status: :unprocessable_entity }
       end
@@ -42,8 +44,11 @@ class QuestionstatusController < ApplicationController
   # PATCH/PUT /mytests/1.json
   def update
     respond_to do |format|
-      if @questionstatu.update(quextionstatu_params)
-        format.html { redirect_to @questionstatu, notice: 'Questionstatu was successfully updated.' }
+      if @questionstatu.update(questionstatu_params)
+        if questionstatu_params[:isdefault] == '1'
+          changedefault(@questionstatu.id)
+        end
+        format.html { redirect_to questionstatus_index_path, notice: 'Questionstatu was successfully updated.' }
         format.json { render :show, status: :ok, location: @questionstatu }
       else
         format.html { render :edit }
@@ -57,7 +62,7 @@ class QuestionstatusController < ApplicationController
   def destroy
     @questionstatu.destroy
     respond_to do |format|
-      format.html { redirect_to questionstatus_path, notice: 'Mytest was successfully destroyed.' }
+      format.html { redirect_to questionstatus_index_path, notice: 'Mytest was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,4 +77,16 @@ class QuestionstatusController < ApplicationController
   def questionstatu_params
     params.require(:questionstatu).permit(:statu, :isdefault)
   end
+
+  def changedefault(id)
+    questionstatus = Questionstatu.all
+    questionstatus.each do |q|
+      q.isdefault = 0
+      q.save
+    end
+    questionstatu = Questionstatu.find(id)
+    questionstatu.isdefault = 1
+    questionstatu.save
+  end
+
 end

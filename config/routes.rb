@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :logins
   resources :api
   resources :questionstatus
+  resources :questions
 end

@@ -1,7 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :project
   belongs_to :user
-  has_many :questionstatus
+  belongs_to :questionstatu
   has_many :questionpris
   has_many :examines
   has_many :questiondescs
