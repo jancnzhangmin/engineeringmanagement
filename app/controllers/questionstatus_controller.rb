@@ -4,7 +4,7 @@ class QuestionstatusController < ApplicationController
   # GET /mytests
   # GET /mytests.json
   def index
-    @questionstatus = Questionstatu.all.page(params[:page]).per(3)
+    @questionstatus = Questionstatu.all.page(params[:page]).per(10)
   end
 
   # GET /mytests/1
@@ -75,7 +75,7 @@ class QuestionstatusController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def questionstatu_params
-    params.require(:questionstatu).permit(:statu, :isdefault)
+    params.require(:questionstatu).permit(:statu, :isdefault, :iscomplete)
   end
 
   def changedefault(id)

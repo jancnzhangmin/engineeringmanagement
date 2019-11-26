@@ -5,6 +5,8 @@ class Project < ApplicationRecord
   has_many :orders
   has_many :talkovers
   has_many :projectauths
-  has_many :users
   has_many :questions
+  has_one :projectmodule
+  has_many :collaborates
+  has_many :users, through: :collaborates
 end

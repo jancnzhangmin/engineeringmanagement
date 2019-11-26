@@ -2,7 +2,7 @@ class Question < ApplicationRecord
   belongs_to :project
   belongs_to :user
   belongs_to :questionstatu
-  has_many :questionpris
+  belongs_to :questionpri
   has_many :examines
   has_many :questiondescs
   has_many :childrens, class_name: "Question", foreign_key: "up_id"

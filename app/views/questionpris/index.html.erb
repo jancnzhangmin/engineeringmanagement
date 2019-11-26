@@ -1,10 +1,10 @@
 
 <%
-  content_for(:title, '任务状态')
+  content_for(:title, '任务优先级')
   content_for(:category_1, 'Tables')
 %>
 <% content_for :heading do %>
-  <i class='fal fa-th-list text-primary'></i>  任务状态
+  <i class='fal fa-th-list text-primary'></i>  任务优先级
   <%= stylesheet_link_tag 'smartadmin/fa-solid', media: 'screen, print' %>
 <% end %>
 
@@ -19,38 +19,30 @@
             <table class="table m-0 table-bordered table-hover" id="table-example">
               <thead>
               <tr>
-                <th>状态</th>
+                <th>优选级</th>
                 <th>默认选择</th>
-                <th>完成标识</th>
                 <th style="width: 150px;">操作</th>
               </tr>
               </thead>
               <tbody>
-              <% @questionstatus.each do |questionstatu| %>
+              <% @questionpris.each do |questionpri| %>
                 <tr>
-                  <td><%= questionstatu.statu %></td>
+                  <td><%= questionpri.pri %></td>
                   <td>
-                    <% if questionstatu.isdefault == 1 %>
+                    <% if questionpri.isdefault == 1 %>
                     <i class="fas fa-check text-primary"></i>
                       <% end %>
                   </td>
                   <td>
-                  <% if questionstatu.iscomplete == 1 %>
-                    <i class="fas fa-check text-primary"></i>
-                  <% end %>
-                  </td>
-                  <td>
-                    <%= link_to '编辑', edit_questionstatus_path(questionstatu), class:'btn btn-sm btn-primary' %>
-                    <%= link_to '删除', questionstatus_path(questionstatu), method: :delete, class:'btn btn-sm btn-danger', data: { confirm: '确认删除?' } %>
+                    <%= link_to '编辑', edit_questionpri_path(questionpri), class:'btn btn-sm btn-primary' %>
+                    <%= link_to '删除', questionpri_path(questionpri), method: :delete, class:'btn btn-sm btn-danger', data: { confirm: '确认删除?' } %>
                   </td>
                 </tr>
               <% end %>
               </tbody>
             </table>
-            <div class="customer-pagination">
-            <%= paginate  @questionstatus %>
-            </div>
-            <%= link_to '新增', new_questionstatus_path, class:'btn btn-primary mt-3 float-right' %>
+
+            <%= link_to '新增', new_questionpri_path, class:'btn btn-primary mt-3 float-right' %>
           </div>
         </div>
       </div>

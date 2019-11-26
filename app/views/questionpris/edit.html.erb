@@ -1,0 +1,13 @@
+
+<%
+  content_for(:title, '任务状态')
+  content_for(:category_1, 'Tables')
+%>
+<% content_for :heading do %>
+  <i class='fal fa-th-list text-primary'></i>  修改任务任务优先级
+<% end %>
+
+
+<%= render 'form', questionpri: @questionpri %>
+
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_074144) do
+ActiveRecord::Schema.define(version: 2019_11_26_091722) do
 
   create_table "admingroups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
   create_table "auths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "keyword"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "collaborates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.string "auth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,6 +57,9 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.integer "visual"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "pinyin"
+    t.string "fullpinyin"
+    t.string "adcode"
   end
 
   create_table "documents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -72,12 +83,19 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "mytests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "user_id"
     t.text "notice"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "notifclas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -94,6 +112,8 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.integer "unread"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.bigint "redirect_id"
   end
 
   create_table "orderdetails", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -126,6 +146,17 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "projectmodules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "project_id"
+    t.integer "notice"
+    t.integer "document"
+    t.integer "contact"
+    t.integer "myorder"
+    t.integer "talkover"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "summary"
@@ -134,6 +165,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.integer "examine"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
   end
 
   create_table "questiondescimgs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -177,6 +209,17 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.integer "isdefault"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "iscomplete"
+  end
+
+  create_table "systemmodules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "notice"
+    t.integer "document"
+    t.integer "contact"
+    t.integer "myorder"
+    t.integer "talkover"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "talkoverdetails", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -198,7 +241,6 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "project_id"
     t.string "name"
     t.string "nickname"
     t.string "headurl"
@@ -209,6 +251,8 @@ ActiveRecord::Schema.define(version: 2019_10_27_074144) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "token"
+    t.bigint "defaultprojectid"
   end
 
 end

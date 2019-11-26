@@ -30,16 +30,16 @@ class SidebarEntry
           },
           {
             href: '#',
-            title: 'Theme Settings',
+            title: '任务配置',
             icon: 'fa-cog',
             children: [
               {
-                href: '#',
-                title: 'How it works',
+                href: questionstatus_index_path,
+                title: '任务状态',
               },
               {
-                href: '#',
-                title: 'Layout Options',
+                href: questionpris_path,
+                title: '任务优先级',
               },
               {
                 href: '#',

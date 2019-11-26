@@ -6,39 +6,33 @@
       <div class="panel-container show">
 
         <div class="panel-content p-0">
-          <%= form_with(scope: :questionstatu,method:questionstatu.id ? 'patch' : 'post', url:questionstatu.id ? questionstatus_path(questionstatu) : questionstatus_index_path, local: true,:html => {class:'needs-validation',novalidate:''}) do |f| %>
+          <%= form_with(model: questionpri, local: true,:html => {class:'needs-validation',novalidate:''}) do |f| %>
             <div class="panel-content">
               <div class="form-row form-group">
                 <div class="col-md-6 mb-3">
-                  <label class="form-label" for="validationCustom03">任务状态 <span class="text-danger">*</span></label>
-                  <%= f.text_field :statu,class:"form-control",required:'' %>
+                  <label class="form-label" for="validationCustom03">任务优先级 <span class="text-danger">*</span></label>
+                  <%= f.text_field :pri,class:"form-control",required:'' %>
                   <div class="invalid-feedback">
-                    任务状态不能为空
+                    任务优先级不能为空
                   </div>
+                </div>
+
+
+
+                <div class="col-12">
+
+                  <div class="custom-control custom-checkbox">
+
+
+                    <%= f.check_box :isdefault,  class:'custom-control-input' %>
+                    <label class="custom-control-label" for="questionpri_isdefault">默认选择 </label>
+                    <div class="invalid-feedback">
+
+                    </div>
+                  </div>
+
                 </div>
               </div>
-
-                <div class="form-row form-group">
-                  <label class="form-label"></label>
-                  <div class="custom-control custom-checkbox mb-3">
-                    <%= f.check_box :isdefault,  class:'custom-control-input' %>
-                    <label class="custom-control-label" for="questionstatu_isdefault">默认选择 </label>
-                    <div class="invalid-feedback">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-row form-group">
-                  <label class="form-label"></label>
-                  <div class="custom-control custom-checkbox mb-3">
-                    <%= f.check_box :iscomplete,  class:'custom-control-input' %>
-                    <label class="custom-control-label" for="questionstatu_iscomplete">完成标识 </label>
-                    <div class="invalid-feedback">
-                    </div>
-                  </div>
-                </div>
-
-
 
 
 

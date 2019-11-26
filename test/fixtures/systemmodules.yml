@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notice: 1
+  document: 1
+  contact: 1
+  myorder: 1
+  talkover: 1
+
+two:
+  notice: 1
+  document: 1
+  contact: 1
+  myorder: 1
+  talkover: 1
